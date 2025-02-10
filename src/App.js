@@ -6,18 +6,17 @@ function App() {
   const [listTwo, setListTwo] = useState([6, 7, 8, 9, 10]);
   const [itemDrag, setItemDrag] = useState(null);
 
-  // Store the dragged item's ID
   const onDragStart = (e) => {
     e.dataTransfer.setData("text/plain", e.target.id);
     setItemDrag(Number(e.target.id));
   };
 
-  // Allow dropping
+
   const allowDrop = (e) => {
     e.preventDefault();
   };
 
-  // Handle drop event
+
   const onDrop = (e) => {
     e.preventDefault();
     const droppedItem = Number(e.dataTransfer.getData("text/plain"));
